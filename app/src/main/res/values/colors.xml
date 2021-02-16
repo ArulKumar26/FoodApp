@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#00956B</color>
+    <color name="colorPrimaryDark">#F6C5D3</color>
+    <color name="colorAccent">#D81B60</color>
+
+
+    <color name="clr_btn">#FFBB72</color>
+
+    <color name="button_disable">#66EF6000</color>
+    <color name="black_opacity50">#59000000</color>
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="grey">#C4C2C2</color>
+    <color name="Qr_bg_grey">#636A6B</color>
+    <color name="Darkgrey">#55585c</color>
+    <color name="lt_grey">#f9f9f9</color>
+    <color name="grey_opacity50">#80C4C2C2</color>
+    <color name="google_yellow">#F8FF5722</color>
+
+    <color name="shadow">#EFF3F3</color>
+    <color name="transparent">#00000000</color>
+    <color name="red">#FF0000</color>
+    <color name="orange">#FF7F00</color>
+    <color name="cyan">#108362</color>
+    <color name="azure">#007FFF</color>
+    <color name="blue">#0000FF</color>
+    <color name="violet">#5DAD95</color>
+    <color name="magenta">#FF00FF</color>
+    <color name="black_transparent">#99000000</color>
+    <color name="dashboard_rewards_bg">#3eb1c8</color>
+    <color name="avg_trans_bg">#ff7d8a</color>
+
+    <color name="revalue_bg">#fea567</color>
+    <color name="payment_bg">#686fe8</color>
+    <color name="money_bg">#b16ef4</color>
+    <color name="yellow_bg">#FED141</color>
+</resources>

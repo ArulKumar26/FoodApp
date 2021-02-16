@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:background="@color/grey"
+
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/layout_cart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="@dimen/_10sdp"
+            android:background="@color/white"
+            android:paddingBottom="@dimen/_10sdp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/iv_back"
+                android:layout_width="@dimen/_25sdp"
+                android:layout_height="@dimen/_25sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:src="@drawable/ic_arrow_back"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+
+                />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/lblTitle"
+                style="@style/TextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="My Cart"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_15sdp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_cart"
+            tools:ignore="MissingConstraints">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/my_card_offer"
+                    style="@style/CustomCardCorners"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    app:layout_constraintHeight_percent="0.711"
+                    app:cardElevation="0dp"
+                    app:cardUseCompatPadding="false"
+                    app:layout_constraintStart_toStartOf="parent"
+                    >
+
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        app:layout_constraintTop_toBottomOf="@+id/layout_cart"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/card_offer"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_80sdp"
+                            android:layout_marginLeft="@dimen/_10sdp"
+                            android:layout_marginRight="@dimen/_10sdp"
+                            app:cardBackgroundColor="@color/colorPrimaryDark"
+                            app:cardCornerRadius="@dimen/_20sdp"
+                            app:cardElevation="0dp"
+                            app:cardUseCompatPadding="false"
+                            app:layout_constraintStart_toStartOf="parent"
+                            tools:ignore="MissingConstraints">
+
+                            <androidx.constraintlayout.widget.ConstraintLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/flag"
+                                    android:layout_width="@dimen/_58sdp"
+                                    android:layout_height="@dimen/_40sdp"
+                                    android:textColor="@color/white"
+                                    android:textSize="@dimen/_16sdp"
+                                    android:textStyle="bold"
+                                    android:src="@drawable/ic_smiley"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintTop_toTopOf="parent"
+                                    app:layout_constraintVertical_bias="0.8" />
+
+                                <com.google.android.material.textview.MaterialTextView
+                                    android:id="@+id/txt_usr_plan"
+                                    style="@style/TextStyle.Title.Sub"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Enjoy your discount upto 50% "
+                                    android:layout_marginTop="@dimen/_8sdp"
+                                    android:textColor="@color/black"
+                                    android:textSize="@dimen/_12sdp"
+                                    app:layout_constraintLeft_toLeftOf="parent"
+                                    app:layout_constraintRight_toRightOf="parent"
+                                    app:layout_constraintTop_toBottomOf="@+id/flag" />
+
+
+                            </androidx.constraintlayout.widget.ConstraintLayout>
+                        </com.google.android.material.card.MaterialCardView>
+
+                        <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_food"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_80sdp"
+                            app:layout_constraintTop_toBottomOf="@+id/card_offer"
+                            tools:listitem="@layout/row_cart" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    app:layout_constraintTop_toBottomOf="@+id/my_card_offer"
+                    android:layout_width="match_parent"
+                    android:id="@+id/bottom_layout"
+                    android:paddingTop="@dimen/_8sdp"
+                    android:layout_marginTop="@dimen/_8sdp"
+                    app:layout_constraintHeight_percent="0.255"
+                    android:background="@color/grey"
+                    android:layout_height="0dp">
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/total_price"
+                        style="@style/TextStyle.Title.Sub"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_12sdp"
+                        android:layout_marginTop="11dp"
+
+                        android:text="Total Price"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_10sdp"
+                        app:layout_constraintLeft_toLeftOf="@+id/bottom_layout"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/total_price_amt"
+                        style="@style/TextStyle.Title.Sub"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/_12sdp"
+                        android:text="$33.50"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_19sdp"
+                        android:textStyle="bold"
+
+                        app:layout_constraintLeft_toLeftOf="@+id/bottom_layout"
+                        app:layout_constraintTop_toBottomOf="@+id/total_price"
+                        tools:layout_editor_absoluteX="38dp"
+                        tools:layout_editor_absoluteY="0dp" />
+
+
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/login_btn"
+                        style="@style/Widget.MaterialComponents.Button"
+                        android:layout_width="@dimen/_130sdp"
+                        android:layout_height="@dimen/_45sdp"
+                        android:text="Next"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        app:backgroundTint="@color/colorPrimary"
+                        app:cornerRadius="@dimen/_10sdp"
+                        android:textSize="@dimen/_11sdp"
+                        android:layout_marginRight="@dimen/_26sdp"
+                        app:layout_constraintEnd_toEndOf="@+id/bottom_layout"
+                        app:layout_constraintLeft_toRightOf="@+id/total_price_amt"
+                        app:rippleColor="@color/clr_btn"
+                        tools:layout_editor_absoluteY="0dp"
+                        tools:ignore="MissingConstraints" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

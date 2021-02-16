@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="app_name">FoodApp</string>
+    <string name="str_if_you_want_to_see_the_detail"
+        >If you want to see the detail <br></br> please tak on  <font color='#108362'>transaction detail</font></string>
+</resources>

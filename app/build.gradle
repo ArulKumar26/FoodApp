@@ -1,0 +1,98 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 30
+    buildToolsVersion "30.0.2"
+
+    defaultConfig {
+        applicationId "com.demo.foodapp"
+        minSdkVersion 16
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.3.2'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    implementation 'com.google.android.material:material:1.3.0-beta01'
+
+    //Coroutines
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.3.7"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.3.7"
+
+    //Live data
+    implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.liveData"
+    implementation "androidx.lifecycle:lifecycle-runtime:$rootProject.liveData"
+    implementation "androidx.lifecycle:lifecycle-common-java8:$rootProject.liveData"
+    implementation 'com.szagurskii:patternedtextwatcher:0.5.0'
+
+    //Extensions
+    implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$rootProject.liveData"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$rootProject.liveData"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$rootProject.liveData"
+
+    //Dagger core
+    implementation "com.google.dagger:dagger:$rootProject.dagger"
+    kapt "com.google.dagger:dagger-compiler:$rootProject.dagger"
+
+
+    //Glide Image loading
+    implementation "com.github.bumptech.glide:glide:$rootProject.glide"
+    kapt "com.github.bumptech.glide:compiler:$rootProject.glide"
+
+//Loading
+    implementation "com.github.ybq:Android-SpinKit:$rootProject.loadingLib"
+    //Dagger Android
+    implementation "com.google.dagger:dagger-android:$rootProject.dagger"
+    implementation "com.google.dagger:dagger-android-support:$rootProject.dagger"
+    kapt "com.google.dagger:dagger-android-processor:$rootProject.dagger"
+    implementation 'com.nex3z:toggle-button-group:1.2.0'
+
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+    // Text Auto size
+    implementation "com.intuit.sdp:sdp-android:$rootProject.sdp"
+
+
+    // Retrofit networking
+    implementation "com.squareup.retrofit2:retrofit:$rootProject.retrofit"
+    implementation "com.squareup.retrofit2:converter-gson:$rootProject.retrofit"
+    implementation "com.squareup.okhttp3:logging-interceptor:$rootProject.okhttp"
+    implementation 'com.squareup.retrofit2:converter-simplexml:2.3.0'
+}
